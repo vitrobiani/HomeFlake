@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -70,7 +69,15 @@
      EDITOR = "nvim";
   };
 
-  home.file.".config/nvim" = ./nvim-setup;
+  programs.neovim = {
+  	enable = true;
+  };
+
+  home.file.".config/nvim" = {
+  	enable = true;
+  	source = /home/vitrobiani/.HomeFlake/nvim-setup;
+	recursive = true;
+  };
 
   programs.fish = {
     enable = true;
