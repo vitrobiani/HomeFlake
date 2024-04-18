@@ -20,7 +20,7 @@
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    # pkgs.hello
+     pkgs.hello
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -69,6 +69,8 @@
   home.sessionVariables = {
      EDITOR = "nvim";
   };
+
+  home.file.".config/nvim" = ./nvim-setup;
 
   programs.fish = {
     enable = true;
